@@ -82,3 +82,8 @@ output "cloudfront_origin_access_controls_ids" {
   description = "The IDS of the origin access identities created"
   value       = local.create_origin_access_control ? [for v in aws_cloudfront_origin_access_control.this : v.id] : []
 }
+
+output "cloudfront_distribution_aliases" {
+  description = "Aliases of the distribution's"
+  value       = try(aws_cloudfront_distribution.this[0].aliases, "")
+}
