@@ -62,3 +62,8 @@ output "cloudfront_origin_access_identity_iam_arns" {
   description = "The IAM arns of the origin access identities created"
   value       = module.cloudfront.cloudfront_origin_access_identity_iam_arns
 }
+
+output "cloudfront_distribution_aliases" {
+  description = "Aliases of the distribution's"
+  value       = module.cloudfront.cloudfront_distribution_aliases
+}
